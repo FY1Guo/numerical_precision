@@ -1,0 +1,14 @@
+Numerical precision in-class assignment
+
+1. Each number is represented by an ordered pair of signed integers
+  a. This pair (a, b) represents [a * 10^b]
+
+2. Operations!
+  a. Multiplication -- (a1, b1) * (a2, b2) = (a1 * a2, b1 + b2)
+  b. Addition (commutative)
+    i. Let b1 > b2
+    ii. while b1 > b2:
+          subtract 1 from b1, multiply a1 by 10
+          if b1 = b2, break (gives a1_new)
+    iii. add a1_new to a2, bases are now the same
+    iv. then (a1, b1) + (a2, b2) = (a1_new + a2, b2)
