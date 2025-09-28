@@ -33,7 +33,23 @@ def add(a1, b1, a2, b2):
     return(a, b)
 
 #multiplication
-
+def mult(a1, b1, a2, b2):
+    '''
+    for two numbers (a1, b1) amd (a2, b2), returns (a1 * a2, b1 + b2)
+    '''
+    
+    a = a1 * a2
+    b = b1 + b2
+    
+    if a == 0:
+        return(0, 0)
+    
+    while a % 10 == 0:
+        a3 //= 10
+        b += 1
+    
+    return(a, b)
+    
 #division
 
 #test
