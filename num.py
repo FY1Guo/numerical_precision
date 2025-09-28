@@ -17,7 +17,7 @@ def add(a1, b1, a2, b2):
         a = a1 + a2
         b = b2
 
-    if b2 > b1:
+    elif b2 > b1:
         while b2 > b1:
             b2 = b2 - 1
             a2 = 10 * a2
@@ -26,7 +26,7 @@ def add(a1, b1, a2, b2):
         a = a1 + a2
         b = b1
 
-    if b1 = b2:
+    elif b1 = b2:
         a = a1 + a2
         b = b1
 
