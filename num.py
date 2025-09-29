@@ -47,6 +47,17 @@ class HPNumber:
             b = b1
 
         return HPNumber(*self.remove_trailing_zeros(a, b))
+        
+    #subtraction
+    def sub(self, other):
+        '''
+        for two numbers (a1, b1) and (a2, b2), returns (a1, b1) - (a2, b2)
+        '''
+
+        a1, b1 = self.a, self.b
+        a2, b2 = -1*other.a, other.b
+
+        return HPNumber(a1, b1) + HPNumber(a2, b2)
 
     #multiplication
     def mult(self, other):
