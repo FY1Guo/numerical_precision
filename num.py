@@ -90,6 +90,51 @@ class HPNumber:
         quotient = self.long_division(a1*10**(exponent), a2)
         
         return HPNumber(*self.remove_trailing_zeros(quotient*sign_1*sign_2, b1-b2-exponent))
+    
+    def lt(self, other):
+        '''
+        Check if self < other
+        '''
+        return not (self-other).is_positive()
+        
+    def le(self, other):
+        '''
+        Check if self <= other
+        '''
+        subtraction = self-other
+        return not subtraction.is_positive() or subtraction.a==0
+    
+    def gt(self, other):
+        '''
+        Check if self > other
+        '''
+        subtraction = self-other
+        return (self-other).is_positive()
+    
+    def ge(self, other):
+        '''
+        Check if self >= other
+        '''
+        subtraction = self-other
+        return (self-other).is_positive() or subtraction.a==0
+    
+    def eq(self, other):
+        '''
+        Check if self == other
+        '''
+        return (self-other).a == 0
+    
+    def ne(self, other):
+        '''
+        Check if self != other
+        '''
+        return (self-other).a != 0
+        
+    def is_positive(self):
+        '''
+        Check if a high precision number is positive
+        '''
+        return self.a>0
         
     @staticmethod
     def long_division(dividend, divisor):
