@@ -71,7 +71,7 @@ def div(a1, b1, a2, b2):
     
     quotient = long_division(a1*10**(exponent), a2)
     
-    return (quotient*sign_1*sign_2, b1-b2-exponent)
+    return remove_trailing_zeros(quotient*sign_1*sign_2, b1-b2-exponent)
     
 def long_division(dividend, divisor):
     '''
@@ -95,5 +95,18 @@ def long_division(dividend, divisor):
             num_dividend_digits += 1
         quotient += str(quotient_digit)
     return int(quotient)
+    
+def remove_trailing_zeros(a, b):
+    '''
+    Remove trailing zeroes from the coefficient a while keeping the number (a,b) the same.
+    '''
+    if a==0:
+        return (0,0)
+    coefficient_string = str(a)
+    exponent = b
+    while int(coefficient_string[-1])==0:
+        coefficient_string = coefficient_string[:-1]
+        exponent += 1
+    return (int(coefficient_string), exponent)
 #test
 
