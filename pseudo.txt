@@ -12,3 +12,8 @@ Numerical precision in-class assignment
           if b1 = b2, break (gives a1_new)
     iii. add a1_new to a2, bases are now the same
     iv. then (a1, b1) + (a2, b2) = (a1_new + a2, b2)
+  c. Division
+    i. Take the numbers (a1,b1)/(a2,b2)
+    ii. Multiply a1 by 10^20 to improve precision of the final result
+    iii. Perform long division to compute a1/a2
+    iv. Discard the remainder, call the remaining quotient D, and return (D, b1-b2-20)
