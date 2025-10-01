@@ -146,7 +146,20 @@ class HPNumber:
         Check if a high precision number is positive
         '''
         return self.a>0
+    
+    def floatlike_string(self):
+        '''
+        Get a string which is easier to visually compare to a float
+        '''
+        a_string = str(self.a)
+        if len(a_string)==1:
+            return self.__str__()
         
+        exponent = self.b+len(a_string)-1
+        coefficient = a_string[0]+"."+a_string[1:]
+        return coefficient+"e"+str(exponent)
+        
+            
     @staticmethod
     def long_division(dividend, divisor):
         '''
