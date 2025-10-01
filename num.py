@@ -16,7 +16,7 @@ class HPNumber:
         return f"{self.a}e{self.b}"
 
     #addition
-    def add(self, other):
+    def __add__(self, other):
         '''
         for two numbers (a1, b1) and (a2, b2), returns (a1, b1) + (a2, b2)
         '''
@@ -49,7 +49,7 @@ class HPNumber:
         return HPNumber(*self.remove_trailing_zeros(a, b))
         
     #subtraction
-    def sub(self, other):
+    def __sub__(self, other):
         '''
         for two numbers (a1, b1) and (a2, b2), returns (a1, b1) - (a2, b2)
         '''
@@ -60,7 +60,7 @@ class HPNumber:
         return HPNumber(a1, b1) + HPNumber(a2, b2)
 
     #multiplication
-    def mult(self, other):
+    def __mul__(self, other):
         '''
         for two numbers (a1, b1) amd (a2, b2), returns (a1 * a2, b1 + b2)
         '''
@@ -78,7 +78,7 @@ class HPNumber:
         return HPNumber(*self.remove_trailing_zeros(a, b))
         
     #division
-    def div(self, other, prec=20):
+    def __truediv__(self, other, prec=20):
         '''
         For two numbers (a1,b1) and (a2,b2), returns the quotient (a1/a2, b1-b2)
         '''
@@ -102,40 +102,40 @@ class HPNumber:
         
         return HPNumber(*self.remove_trailing_zeros(quotient*sign_1*sign_2, b1-b2-exponent))
     
-    def lt(self, other):
+    def __lt__(self, other):
         '''
         Check if self < other
         '''
         return not (self-other).is_positive()
         
-    def le(self, other):
+    def __le__(self, other):
         '''
         Check if self <= other
         '''
         subtraction = self-other
         return not subtraction.is_positive() or subtraction.a==0
     
-    def gt(self, other):
+    def __gt__(self, other):
         '''
         Check if self > other
         '''
         subtraction = self-other
         return (self-other).is_positive()
     
-    def ge(self, other):
+    def __ge__(self, other):
         '''
         Check if self >= other
         '''
         subtraction = self-other
         return (self-other).is_positive() or subtraction.a==0
     
-    def eq(self, other):
+    def __eq__(self, other):
         '''
         Check if self == other
         '''
         return (self-other).a == 0
     
-    def ne(self, other):
+    def __ne__(self, other):
         '''
         Check if self != other
         '''
