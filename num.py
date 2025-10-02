@@ -157,6 +157,12 @@ class HPNumber:
         
         exponent = self.b+len(a_string)-1
         coefficient = a_string[0]+"."+a_string[1:]
+        if coefficient[0]=="-":
+            exponent -=1
+            if len(coefficient>=4):
+                coefficient = coefficient[0]+coefficient[2]+"."+coefficient[3:]
+            else:
+                coefficient = coefficient[0]+coefficient[2]
         return coefficient+"e"+str(exponent)
         
             
