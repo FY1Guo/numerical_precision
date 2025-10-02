@@ -17,3 +17,12 @@ Numerical precision in-class assignment
     ii. Multiply a1 by 10^20 to improve precision of the final result
     iii. Perform long division to compute a1/a2
     iv. Discard the remainder, call the remaining quotient D, and return (D, b1-b2-20)
+    
+    
+
+3. Sorting algorithms
+    a. Take a single argument (unsorted list) and return a single argument (sorted list)
+    b. Conditioning method which puts numbers in scientific notation, with a single digit before the decimal point
+    c. Bubble sort
+        i. For list of length N, iterate through N times. For each iteration, compare every pair of consecutive elements in order. If the second is lower than the first, swap the two.
+    d. Merge sort
