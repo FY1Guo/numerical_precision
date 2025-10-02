@@ -26,3 +26,7 @@ Numerical precision in-class assignment
     c. Bubble sort
         i. For list of length N, iterate through N times. For each iteration, compare every pair of consecutive elements in order. If the second is lower than the first, swap the two.
     d. Merge sort
+        i. Pair items in list in place
+        ii. Sort each pair (greater / less)
+        iii. For first number in first pair, pull lower number in adjacent pair first and make new superpair, repeat
+        iv. Repeat this process until full list is appended into one superpair
