@@ -44,8 +44,8 @@ def merge_sort(arr):
     sort(0, len(arr)) #exlusive of end point
     return arr
 
-N_list_bubble = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,300,400, 500]
-N_list_merge = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,300,400, 500, 750, 1000, 1500, 2000, 2500, 5000, 6000, 7000, 8000, 9000, 10000]
+N_list_bubble = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,300,400, 500, 750, 1000, 1500, 2000, 2500, 5000]
+N_list_merge = np.logspace(2, 5, 20, dtype=int)
 bubble_times = []
 merge_times = []
 
