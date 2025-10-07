@@ -44,16 +44,17 @@ def merge_sort(arr):
     sort(0, len(arr)) #exlusive of end point
     return arr
 
-N_list = np.arange(1000000, step = 500)
+N_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200,300,400, 500, 750, 1000, 1500, 2000, 2500, 5000]
 bubble_times = []
 merge_times = []
 
 for N in N_list:
-    a_list = rand.randint(int(-1e10), int(1e10), size = N)
-    b_list = rand.randint(int(-1e10), int(1e10), size = N)
+    a_list = rand.randint(int(-10), int(10), size = N)
+    b_list = rand.randint(int(-5), int(5), size = N)
     number_list = [HPNumber(a_list[i], b_list[i]) for i in range(N)]
-    bubble_times.append(timeit.timeit('bubble_sort(number_list)', number = 100))
-    merge_times.append(timeit.timeit('merge_sort(number_list)', number = 100))
+    print(N)
+    bubble_times.append(timeit.timeit("bubble_sort(number_list)", globals = globals(), number = 5))
+    merge_times.append(timeit.timeit("merge_sort(number_list)", globals = globals(),number = 5))
     
 plt.plot(N_list, bubble_times, label = "Bubble sort")
 plt.plot(N_list, merge_times, label = "Merge sort")
